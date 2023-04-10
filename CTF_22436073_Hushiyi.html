@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CTF Puzzle</title>
+</head>
+
+<body>
+    <h1>CTF Puzzle</h1>
+    <p>Someone has left an encrypted question. Please answer the following question, if your answer is correct, you will get the flag.</p>
+    <p>U2FsdGVkX18/stDbEY4MfxNFKjop7yF7q8zQTSz6jKO8XF+Ki3idtldBL0sVJdmH</p>
+
+    <div>
+        <p>The question is:</p>
+        <input type="text" id="first-answer" placeholder="Enter your answer...">
+        <button onclick="checkFirstAnswer()">Submit</button>
+        <p id="first-result"></p>
+    </div>
+
+    <div>
+        <p>Now, please answer the question:</p>
+        <input type="text" id="second-answer" placeholder="Enter your answer...">
+        <button onclick="checkSecondAnswer()">Submit</button>
+        <p id="second-result"></p>
+    </div>
+
+    <script>
+        function checkFirstAnswer() {
+          const input = document.getElementById("first-answer").value;
+          if (input === "Do_you_love_COMP7170") {
+            document.getElementById("first-result").innerHTML = "Congratulations! You found out the question!";
+          } else {
+            document.getElementById("first-result").innerHTML = "Incorrect answer. Please try again.";
+          }
+        }
+        
+        function checkSecondAnswer() {
+          const input = document.getElementById("second-answer").value;
+          if (input === "Yes") {
+            document.getElementById("second-result").innerHTML = "Congratulations! You got the flag!";
+          } else {
+            document.getElementById("second-result").innerHTML = "Incorrect answer. Please try again.";
+          }
+        }
+    </script>
+
+
+</body>
+
+</html>
